@@ -1,0 +1,17 @@
+function testNumber(num){
+    return new Promise((resolve,reject) => {
+        if(num <= 10){
+            resolve("It s success");
+        }
+        setTimeout(() => {
+            reject("should be rejected.");
+        }, 8000);
+    })
+}
+
+testNumber(18)
+.then(success => {
+    console.log(success);
+    
+})
+.catch(error => console.log(error))
